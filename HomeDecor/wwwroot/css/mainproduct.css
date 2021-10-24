@@ -1,0 +1,30 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Lora&family=Roboto+Slab&display=swap');
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300ita‌​lic,400italic,500,500italic,700,700italic,900italic,900);
+
+.sale-overlay {
+    background-color: #e03e3e;
+    position: absolute;
+    color: #fff;
+    border-radius: 5px;
+    right: 5px;
+    top: 5px;
+    font-size: 0.9rem;
+}
+
+.font-roboto {
+    font-family : 'Roboto', sans-serif;
+}
+
+.star-active {
+    color: #FFCA28 !important
+}
+
+.fa-star {
+    color: #CFD8DC;
+    cursor: pointer
+}
+
+.text-decor-line-through{
+    text-decoration: line-through;
+}
+

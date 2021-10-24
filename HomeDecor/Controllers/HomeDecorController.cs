@@ -1,5 +1,7 @@
-﻿using HomeDecor.Models;
+﻿using HomeDecor.DbModels;
+using HomeDecor.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,17 +13,73 @@ namespace HomeDecor.Controllers
 {
     public class HomeDecorController : Controller
     {
-        private readonly ILogger<HomeDecorController> _logger;
+        private ApiContext _context;
 
-        public HomeDecorController(ILogger<HomeDecorController> logger)
+        public HomeDecorController(ApiContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
-        public IActionResult Index()
+
+
+        [HttpGet]
+        public IActionResult Index(int ProductId = 0)
         {
-            return View();
+            //var product = _context.Products.ToList();
+            //var productprice = _context.ProductPricings.ToList();
+            //var productrate = _context.ProductRatings.ToList();
+
+            var Joinproduct = (from p in _context.Products
+                               join e in _context.ProductRatings on p.ProductId equals e.ProductId
+                               join q in _context.ProductPricings on p.ProductId equals q.ProductId
+                               select new ProductDataModels
+                               {
+                                   ProductId = p.ProductId,
+                                   ProductName = p.ProductName,
+                                   Pic_Path = p.Pic_Path,
+                                   Catageory = p.Catageory,
+                                   ProductScore = e.ProductScore,
+                                   ProductPrice = q.ProductPrice,
+                                   Amount = q.Amount,
+                                   Unit = q.Unit,
+                                   Discount_Percentage = q.Discount_Percentage,
+                                   DiscountStart = q.DiscountStart,
+                                   DiscountEnd = q.DiscountEnd,
+
+                               });
+
+            if (ProductId != 0)
+            {
+                Joinproduct = Joinproduct.Where(x => x.ProductId == ProductId);
+            }
+                        //       select new
+                        //{
+                        //    ProductId = p.ProductId,
+                        //    ProductName = p.ProductName,
+                        //    Catageory = p.Catageory,
+                        //    ProductScore = e.ProductScore,
+                        //    ProductPrice = q.ProductPrice,
+                        //    Discount_Percentage = q.Discount_Percentage,
+                        //    DiscountStart = q.DiscountStart,
+                        //    DiscountEnd = q.DiscountEnd,
+                        //}).ToList();
+            
+            
+
+
+            return View(Joinproduct.ToList());
         }
+
+
+        [HttpGet]
+        //[HttpPost]
+        //public IActionResult Add(Product product)
+        //{
+        //    var newID = _context.Products.Select(x => x.ProductId).Max() + 1;
+        //    product.ProductId = newID
+        //}
+
+
         public IActionResult ProductDetail()
         {
             return View();
@@ -32,5 +90,6 @@ namespace HomeDecor.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
