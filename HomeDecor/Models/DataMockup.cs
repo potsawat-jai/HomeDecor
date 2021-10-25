@@ -28,58 +28,66 @@ namespace HomeDecor.Models
                     new Product
                     {
                         ProductId = 1,
-                        ProductName = "Butterfly Shelf",
-                        Pic_Path = "Butterfly_Shelf.jpg",
-                        Catageory = "SHELF"
+                        ProductName = "Minimalist floor shelf",
+                        Pic_Path = "minimal_floor_shelf.jpg",
+                        Detail = "Minimal 5 floor shelf",
+                        Category = "SHELF"
                     },
                     new Product
                     {
                         ProductId = 2,
-                        ProductName = "Glass shade lamp",
-                        Pic_Path = "Glass_shade_lamp.jpg",
-                        Catageory = "LAMP"
+                        ProductName = "LED Desk Lamp",
+                        Pic_Path = "LED_Desk_Lamp.jpg",
+                        Detail = "Desk lamp with led can turn 360 deegrees",
+                        Category = "LAMP"
                     },
                     new Product
                     {
                         ProductId = 3,
-                        ProductName = "Kasa Lamp",
-                        Pic_Path = "Kasa_Lamp.jpg",
-                        Catageory = "LAMP"
+                        ProductName = "Glass shade lamp",
+                        Pic_Path = "glass_shade_lamp.jpg",
+                        Detail = "Glass round lamp",
+                        Category = "LAMP"
                     },
                     new Product
                     {
                         ProductId = 4,
                         ProductName = "Mango wood dining table",
                         Pic_Path = "Mango_wood_table.jpg",
-                        Catageory = "TABLE"
+                        Detail = "Wood table mango color",
+                        Category = "TABLE"
                     },
                     new Product
                     {
                         ProductId = 5,
                         ProductName = "Nordic desk lamp",
                         Pic_Path = "Nordic_lamp.jpg",
-                        Catageory = "LAMP"
+                        Detail = "Nordic lamp led",
+                        Category = "LAMP"
                     },
                     new Product
                     {
                         ProductId = 6,
-                        ProductName = "Oak Wood Chair",
-                        Pic_Path = "Oak_Wood_Chair.jpg",
-                        Catageory = "CHAIR"
+                        ProductName = "Fan Dining Chair",
+                        Pic_Path = "Fan_Dining_Chair.jpg",
+                        Detail = "Dining chair",
+                        Category = "CHAIR"
                     },
                     new Product
                     {
                         ProductId = 7,
                         ProductName = "Oak Wood Round ArmChair",
                         Pic_Path = "Oak_Wood_Round_ArmChair.jpg",
-                        Catageory = "CHAIR"
+                        Detail = "Round ArmChair",
+                        Category = "CHAIR"
                     },
                     new Product
                     {
                         ProductId = 8,
-                        ProductName = "Robin Desk",
-                        Pic_Path = "Robin_Desk.jpg",
-                        Catageory = "TABLE"
+                        ProductName = "Alfred Side Table",
+                        Pic_Path = "Alfred_Side_Table.jpg",
+                        Detail = "Side table",
+                        Category = "TABLE"
                     });
 
                 context.ProductRatings.AddRange(

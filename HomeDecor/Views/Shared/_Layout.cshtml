@@ -6,18 +6,14 @@
     <title>@ViewData["Title"] - HomeDecor</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/mainproduct.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
     <link rel="Shortcut Icon" href="~/images/house-decoration.png" type="image" />
 </head>
 <body>
-            @RenderBody()
+    @RenderBody()
 
-    <footer class="border-top footer text-muted text-right">
-        <div class="container">
-            &copy; 2021 - HomeDecor - <span>Created By Potsawat Jaikwang</span>
-        </div>
-    </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
